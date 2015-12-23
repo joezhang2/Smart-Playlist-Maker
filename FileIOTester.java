@@ -30,6 +30,7 @@ public class FileIOTester{
 	public static void main(String[] args){
 		FileIOTester tester = new FileIOTester();
 		tester.copyInputToOutput();
+		//tester.getInputTest().readFile();
 		System.out.println("Contents of copied generic list");
 		tester.getInputTest().getTempList().printContent();
 	}
