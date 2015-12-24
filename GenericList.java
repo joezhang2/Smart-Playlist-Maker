@@ -240,6 +240,10 @@ public class GenericList <T> {
 		return getElement(iterator-1);
 	}
 
+	public T getCurrent(){
+		return getElement(iterator);
+	}
+
 	public void printContent(){
 		resetIterator();
 		while(hasNext()){
