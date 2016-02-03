@@ -1,8 +1,10 @@
+/*
+	Writes an the contents of a list to a file. 
+*/
 import java.io.*;
 
 public class FileOutput{
 	private String fileName;
-	//private String[] fileLines
 	private GenericList<String> tempList;
 
 	public FileOutput(){
@@ -13,6 +15,9 @@ public class FileOutput{
 		setFileName(fileName);
 	}
 
+	/*====================================
+	Getters and setters
+	====================================*/
 	public void setFileName(String fileName){
 		this.fileName = fileName;
 	}
@@ -26,8 +31,12 @@ public class FileOutput{
 		return tempList;
 	}
 	
+
+	/*====================================
+	Creates and writes conents of list to a file
+	====================================*/
 	public void createList(){
-	
+		//Make the file
 		File file = new File (getFileName());
         //file.getParentFile().mkdirs();
 		try{
@@ -35,12 +44,14 @@ public class FileOutput{
 			//reset the iterator in temp list
 			tempList.resetIterator();
 			String tempLine = null;
+			//Each element of list is written to a new line in the file
 			while(tempList.hasNext()){
 				tempLine = tempList.getNext();
 				outputLine.println(tempLine);
 			}	
 			outputLine.close();
 		}catch (FileNotFoundException e){
+			//Error message in the file is not found
 			System.err.println("File not found");
 			System.err.println(e.getMessage());
     	}

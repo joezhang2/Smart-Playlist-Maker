@@ -202,6 +202,7 @@ public class GenericList <T> {
 			setElement(null, i);
 		}
 		setIndex(0);
+		resetIterator();
 	}
 	
 	//trims off excess storage
@@ -224,6 +225,9 @@ public class GenericList <T> {
 		
 //=================================================	
 	//iterator
+	public int getIterator(){
+		return iterator;
+	}
 	public void resetIterator(){
 		iterator = 0;
 	}
