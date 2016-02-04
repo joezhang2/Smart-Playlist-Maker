@@ -14,7 +14,6 @@ public class CreateShuttlePlaylistAp{
 	}
 	public static void main(String[] args){
 		//System.out.println("Enter name of playlist");
-		System.out.println("test");
 		CreateShuttlePlaylistAp test = new CreateShuttlePlaylistAp("aaron.txt");
 		test.getMaker().convert();
 	}
