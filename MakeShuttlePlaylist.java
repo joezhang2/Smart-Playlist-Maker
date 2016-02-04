@@ -41,10 +41,9 @@ public class MakeShuttlePlaylist{
 		//Each line in the playlist is separated into an array
 		itunesFileStorage.fileDataToList();
 		
-		String templine;
+		String templine = "";
 
 		itunesFileStorage.getFormattedInputData().resetIterator();
-		System.out.println("Size: " + itunesFileStorage.getFormattedInputData().getIndex());
 		//Skip first line in itunesPlayList file that explains what each column is
 		itunesFileStorage.getFormattedInputData().getNext();
 		
@@ -53,13 +52,9 @@ public class MakeShuttlePlaylist{
 
 		String[] formatter = {"#EXTINF:" , "," , " - ","\n/storage/emulated/0/Music/"};
 		
-		int i = 0;
 		while(itunesFileStorage.getFormattedInputData().hasNext()){
 			templine = formatSongInShuttlePlaylist(gatherDataFromItunesPlaylist(itunesFileStorage.getFormattedInputData().getNext()),formatter);
-			
 			shuttleFileMaker.getTempList().add(templine);
-			System.out.println(i);
-			i++;
 		}
 		shuttleFileMaker.createList();
 	}
@@ -70,7 +65,7 @@ public class MakeShuttlePlaylist{
 		String[] returnData = new String[positions.length];
 
 		//Store first 3 values into array
-		for(int i = 0; i < positions.length-1; i++){
+		for(int i = 0; i < positions.length; i++){
 			returnData[i] = input[positions[i]];
 		}
 		//change the filepath, using / instead of : to denote a lower level

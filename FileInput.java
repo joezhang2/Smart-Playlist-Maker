@@ -42,11 +42,12 @@ public class FileInput{
 			BufferedReader bReader = new BufferedReader(fReader);
 			try{
 				//read text from the file
-				String tempLine = bReader.readLine();
-				while(tempLine != null){
+				String tempLine = "";
+				//the bufferedReader handles new line and EOF characters, but not whitespace characters
+				//the trim() method removes the whitespace character/s at the end of the file
+				while((tempLine=bReader.readLine()) != null && tempLine.trim().length() != 0){
 					//add line to the list
 					tempList.add(tempLine);
-					tempLine = bReader.readLine();
 				}	
 				bReader.close();
 			}catch(IOException e){

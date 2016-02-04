@@ -67,7 +67,6 @@ public class ReadItunePlaylist {
 			for(int i = 0; i < positions.length; i++){
 				temp += " | " + "(" + i + ") " + tempArray[positions[i]];
 			}
-			System.out.println(temp);
 		}
 	}
 }
