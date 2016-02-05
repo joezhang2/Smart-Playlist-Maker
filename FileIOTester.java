@@ -1,6 +1,9 @@
 /*
-	Tests the FileInput and FileOutput classes to verify that a file can be read and have the contents copied to a new file 
-*/
+ * Tests the FileInput and FileOutput classes 
+ * 
+ * This class verifies that a file can be read and copied into a FileInput object 
+ * The data is then copied to a new file using an FileOuput object
+ */
 public class FileIOTester{
 	final String INPUT_FILE = "testFile.txt";
 	final String FILE_OUTPUT = "testFileOuput.txt";
@@ -8,11 +11,13 @@ public class FileIOTester{
 	FileInput inputTest;
 	FileOutput outputTest;
 	
+	/*=============================
+	Constructors
+	=============================*/
 	public FileIOTester(){
 		inputTest = new FileInput(INPUT_FILE);
 		outputTest = new FileOutput(FILE_OUTPUT);
 	}
-
 	public FileIOTester(String inputFile, String outputFile){
 		inputTest = new FileInput(inputFile);
 		outputTest = new FileOutput(outputFile);
@@ -39,7 +44,7 @@ public class FileIOTester{
 	public void copyInputToOutput(){
 		inputTest.readFile();
 		outputTest.setTempList(inputTest.getTempList());
-		outputTest.createList();
+		outputTest.createPlaylist();
 	}
 
 	/*=============================

@@ -1,3 +1,6 @@
+/*
+ *	Reads the lines from a file and saves them to a generic list
+ */
 import java.io.*;
 
 public class FileInput{
@@ -18,12 +21,14 @@ public class FileInput{
 	/*====================================
 	Getters and setters
 	====================================*/
+	//fileName: name of file to read from
 	public void setFileName(String fileName){
 		this.fileName = fileName;
 	}
 	public String getFileName(){
 		return fileName;
 	}
+	//tempList: list that stores lines of data from the file (fileName)
 	public void setTempList(GenericList tempList){
 			this.tempList = tempList;
 	}
@@ -45,17 +50,18 @@ public class FileInput{
 				String tempLine = "";
 				//the bufferedReader handles new line and EOF characters, but not whitespace characters
 				//the trim() method removes the whitespace character/s at the end of the file
+				
 				while((tempLine=bReader.readLine()) != null && tempLine.trim().length() != 0){
 					//add line to the list
 					tempList.add(tempLine);
 				}	
 				bReader.close();
-			}catch(IOException e){
+			}catch(IOException e){	//exceptions from reading contents of the file
 				System.err.println("I/O problem with buffered reader");
 				System.err.println(e.getMessage());
 			}
 			fReader.close();
-		}catch(FileNotFoundException e){			
+		}catch(FileNotFoundException e){	//exceptions from opening the file
 			System.err.println("File not found");
 			System.err.println(e.getMessage());
 		}catch(IOException e){
