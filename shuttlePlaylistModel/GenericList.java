@@ -1,3 +1,4 @@
+package shuttlePlaylistModel;
 
 /*
  * Joe Zhang

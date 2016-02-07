@@ -1,3 +1,4 @@
+package shuttlePlaylistModel;
 /*
  * Tests ReadItunePlaylist and sees if a file containing iTunes playlist info can be read and
  * then have the contents copied over to a file for Shuttle 

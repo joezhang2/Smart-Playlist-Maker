@@ -1,3 +1,4 @@
+package shuttlePlaylistModel;
 /*
  * Creates a playlist for Shuttle using playlist information from a iTunes playlist
  */

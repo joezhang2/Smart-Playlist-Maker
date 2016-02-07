@@ -1,3 +1,4 @@
+package shuttlePlaylistModel;
 /*
  * Writes an the contents of a list to a file
  */

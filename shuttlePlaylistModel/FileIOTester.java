@@ -1,3 +1,4 @@
+package shuttlePlaylistModel;
 /*
  * Tests the FileInput and FileOutput classes 
  * 

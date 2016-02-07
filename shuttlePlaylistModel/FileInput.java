@@ -1,3 +1,4 @@
+package shuttlePlaylistModel;
 /*
  *	Reads the lines from a file and saves them to a generic list
  */

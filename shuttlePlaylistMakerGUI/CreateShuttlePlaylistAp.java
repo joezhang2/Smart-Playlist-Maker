@@ -1,4 +1,7 @@
+package shuttlePlaylistMakerGUI;
 import java.io.*;
+
+import shuttlePlaylistModel.MakeShuttlePlaylist;
 
 public class CreateShuttlePlaylistAp{
 	private MakeShuttlePlaylist maker = new MakeShuttlePlaylist();
