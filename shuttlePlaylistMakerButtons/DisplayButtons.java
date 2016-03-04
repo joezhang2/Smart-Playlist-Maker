@@ -1,19 +1,17 @@
 package shuttlePlaylistMakerButtons;
 
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 	
-public class PlaylistMakerButtons {
-	private JFileChooser fileSelection;
-	private FileSelection buttons;
+public class DisplayButtons {
+
+	private FileSelectionButtons buttons;
 	
-	public PlaylistMakerButtons() {
-		buttons = new FileSelection();
+	public DisplayButtons() {
+		buttons = new FileSelectionButtons();
 	}
 	
 	public static void main(String[] args) {
-		PlaylistMakerButtons test = new PlaylistMakerButtons();
+		DisplayButtons test = new DisplayButtons();
 		JFrame testFrame = new JFrame();
 		testFrame.add(test.buttons);
 		testFrame.pack();

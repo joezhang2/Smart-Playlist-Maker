@@ -9,12 +9,12 @@ package shuttlePlaylistMakerButtons;
  *
  * @author jzhang
  */
-public class FileSelection extends javax.swing.JPanel {
+public class FileSelectionButtons extends javax.swing.JPanel {
 
     /**
      * Creates new form FileSelection
      */
-    public FileSelection() {
+    public FileSelectionButtons() {
         initComponents();
     }
 
@@ -85,12 +85,12 @@ public class FileSelection extends javax.swing.JPanel {
         selectedFilesPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         selectedFilesPanel.setLayout(new java.awt.BorderLayout());
 
-        locationLabel.setText("Location");
+        locationLabel.setText("Location: ");
         locationLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         selectedFilesPanel.add(locationLabel, java.awt.BorderLayout.CENTER);
 
         selectedFilesList.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = { "File 1", "File 2", "File 3", "File 4", "File 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
