@@ -1,4 +1,6 @@
 package shuttlePlaylistMakerButtons;
+
+import javax.swing.ListSelectionModel;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -94,6 +96,7 @@ public class FileSelectionButtons extends javax.swing.JPanel {
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
+        selectedFilesList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         selectedFilesScrollPane1.setViewportView(selectedFilesList);
 
         selectedFilesPanel.add(selectedFilesScrollPane1, java.awt.BorderLayout.PAGE_START);

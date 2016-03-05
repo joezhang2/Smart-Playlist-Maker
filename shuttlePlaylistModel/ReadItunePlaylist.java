@@ -1,4 +1,7 @@
 package shuttlePlaylistModel;
+
+import shuttlePlaylistUtilities.GenericList;
+
 /*
  * Reads contents of an iTune playlist and then copies it to a GenericList object
  */

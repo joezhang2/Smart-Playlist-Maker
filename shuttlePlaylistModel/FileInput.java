@@ -4,6 +4,8 @@ package shuttlePlaylistModel;
  */
 import java.io.*;
 
+import shuttlePlaylistUtilities.GenericList;
+
 public class FileInput{
 	final private int DEFAULT_SIZE = 100;			//initial size of list
 	final private int DEFAULT_GROWTH_RATE = 20;		//number of elements to add when list is full

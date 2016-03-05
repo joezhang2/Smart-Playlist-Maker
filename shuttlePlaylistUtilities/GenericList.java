@@ -1,4 +1,4 @@
-package shuttlePlaylistModel;
+package shuttlePlaylistUtilities;
 
 /*
  * Joe Zhang

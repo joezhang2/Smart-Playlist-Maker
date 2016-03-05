@@ -4,6 +4,8 @@ package shuttlePlaylistModel;
  */
 import java.io.*;
 
+import shuttlePlaylistUtilities.GenericList;
+
 public class FileOutput{
 	private String fileName;
 	private GenericList<String> tempList;
