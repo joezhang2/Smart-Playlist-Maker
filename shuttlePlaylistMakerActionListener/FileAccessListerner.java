@@ -2,13 +2,10 @@ package shuttlePlaylistMakerActionListener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JComponent;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import java.io.File;
-
 
 public class FileAccessListerner implements ActionListener {
 	private JList<String> listToModify;
@@ -18,14 +15,16 @@ public class FileAccessListerner implements ActionListener {
 	public FileAccessListerner(JList<String> componentToModify) {
 		// TODO Auto-generated constructor stub
 		setListToModify(componentToModify);
-		setLabelToModify(null);
+		labelToModify = null;
 		fileChooser = new JFileChooser();
+		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		
 	}
 	public FileAccessListerner(JLabel componentToModify) {
 		setLabelToModify(componentToModify);
-		setListToModify(null);
+		listToModify = null;
 		fileChooser = new JFileChooser();
+		fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 	}
 	
 	public JList<String> getListToModify() {
@@ -95,11 +94,9 @@ public class FileAccessListerner implements ActionListener {
 				//update stored data
 				
 				//refresh parent panel
-				getListToModify().getParent().revalidate();
-				getListToModify().getParent().repaint();
+				getLabelToModify().getParent().revalidate();
+				getLabelToModify().getParent().repaint();
 			}
-					
-			
 		}
 	}
 	
