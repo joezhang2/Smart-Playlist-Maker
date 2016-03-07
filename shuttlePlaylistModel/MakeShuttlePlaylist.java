@@ -11,17 +11,14 @@ public class MakeShuttlePlaylist{
 	/*====================================
 	Constructors
 	====================================*/
-	public MakeShuttlePlaylist(){
-		itunesFileStorage = new ReadItunePlaylist();
-		shuttleFileMaker = new FileOutput();
-	}
-	public MakeShuttlePlaylist(String itunesFileName){
+	public MakeShuttlePlaylist(String itunesFileName, String savedLocation){
 		//Sets file
 		setItunesFileName(itunesFileName);
+		setShuttleFileName(savedLocation);
 		itunesFileStorage = new ReadItunePlaylist(getItunesFileName());
 
-		//make the file for Shuttle, using the same fileName as iTunes but with a different extension
-		createFile(itunesFileName);
+		//make the file for Shuttle
+		shuttleFileMaker = new FileOutput(getShuttleFileName());
 	}
 	
 	/*====================================
@@ -40,17 +37,6 @@ public class MakeShuttlePlaylist{
 	}
 	public String getShuttleFileName(){
 		return shuttleFileName;
-	}
-	
-	/*====================================
-	Creates playlist for Shuttle
-		parameters: name of file with iTunes playlist
-		Creates a file with the same name, but different extension (.txt -> .m3u)
-	====================================*/
-	public void createFile(String itunesFileName){
-		String[] temp = getItunesFileName().split(".txt");
-		setShuttleFileName(temp[0]+".m3u");
-		shuttleFileMaker = new FileOutput(getShuttleFileName());
 	}
 
 	/*====================================
@@ -99,6 +85,7 @@ public class MakeShuttlePlaylist{
 		//Store first 3 values into array
 		for(int i = 0; i < positions.length; i++){
 			returnData[i] = input[positions[i]];
+			System.out.println(input[positions[i]]);
 		}
 		//change the filepath, using / instead of : to denote a lower level
 		tempLocation = input[positions[positions.length-1]].split(":");

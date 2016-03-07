@@ -22,6 +22,12 @@ public class FileOutput{
 		tempList = new GenericList<String>(100,20);	
 		setFileName(fileName);
 	}
+	
+	public FileOutput(String fileName, GenericList<String> data){
+		//list starts out with a size of 100 and adds 20 new elements when maxed
+		setTempList(data);	
+		setFileName(fileName);
+	}
 
 	/*====================================
 	Getters and setters

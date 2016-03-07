@@ -1,4 +1,4 @@
-package shuttlePlaylistMakerGUI;
+/*package shuttlePlaylistMakerGUI;
 import java.io.*;
 
 import shuttlePlaylistModel.MakeShuttlePlaylist;
@@ -20,4 +20,4 @@ public class CreateShuttlePlaylistAp{
 		CreateShuttlePlaylistAp test = new CreateShuttlePlaylistAp("aaron.txt");
 		test.getMaker().convert();
 	}
-}
+}*/
