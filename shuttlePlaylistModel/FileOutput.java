@@ -54,16 +54,34 @@ public class FileOutput{
 		//Make the file
 		File file = new File (getFileName());
 		try{
-			PrintWriter outputLine = new PrintWriter(file);
+			BufferedWriter out = null;
+			try {
+				out = new BufferedWriter( new OutputStreamWriter(new FileOutputStream(file), "UTF-16"));
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 			//reset the iterator in temp list
 			tempList.resetIterator();
 			String tempLine = null;
 			//Each element of list is written to a new line in the file
 			while(tempList.hasNext()){
 				tempLine = tempList.getNext();
-				outputLine.println(tempLine);
+				try {
+					out.write(tempLine);
+					out.newLine();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}	
-			outputLine.close();
+			try {
+				out.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}catch (FileNotFoundException e){
 			//Error message in the file is not found
 			System.err.println("File not found");

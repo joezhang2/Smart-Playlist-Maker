@@ -10,6 +10,7 @@ public class ReadItunePlaylist {
 	private String playListFile;
 	private GenericList<String[]> formattedInputData;
 	final private String defaultFile = "testFile.txt";
+	final private int NUM_COLUMNS_FOR_SONG = 27;
 	
 	/*====================================
 	Constructors
@@ -67,7 +68,9 @@ public class ReadItunePlaylist {
 			//Get a line from the tempList and casts into a string
 			columnNames = (String)fileData.getTempList().getNext();
 			//separate the string and save into the arrayList
-			formattedInputData.add(columnNames.split("\t"));
+			//skip data if the number of columns is too low
+			if(columnNames.length() >= NUM_COLUMNS_FOR_SONG)
+				formattedInputData.add(columnNames.split("\t"));
 		}
 	}
 	

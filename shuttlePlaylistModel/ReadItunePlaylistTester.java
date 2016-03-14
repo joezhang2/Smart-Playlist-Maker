@@ -4,7 +4,7 @@ package shuttlePlaylistModel;
  * then have the contents copied over to a file for Shuttle 
  */
 public class ReadItunePlaylistTester{
-	private String testFile = "testFile.txt";
+	private String testFile = "Chinese.txt";
 	private ReadItunePlaylist playList;
 	/*====================================
 	Constructors

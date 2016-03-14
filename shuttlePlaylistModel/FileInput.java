@@ -43,33 +43,35 @@ public class FileInput{
 	Saves each line of text in a file as a string in a list
 	====================================*/
 	public void readFile(){
-		FileReader fReader = null;
-		try{
-			//open a file
-			fReader = new FileReader(getFileName());
-			BufferedReader bReader = new BufferedReader(fReader);
-			try{
-				//read text from the file
-				String tempLine = "";
-				//the bufferedReader handles new line and EOF characters, but not whitespace characters
-				//the trim() method removes the whitespace character/s at the end of the file
-				
-				while((tempLine=bReader.readLine()) != null && tempLine.trim().length() != 0){
-					//add line to the list
-					tempList.add(tempLine);
-				}	
-				bReader.close();
-			}catch(IOException e){	//exceptions from reading contents of the file
-				System.err.println("I/O problem with buffered reader");
-				System.err.println(e.getMessage());
-			}
-			fReader.close();
-		}catch(FileNotFoundException e){	//exceptions from opening the file
-			System.err.println("File not found");
-			System.err.println(e.getMessage());
-		}catch(IOException e){
-			System.err.println("I/O problem with file");
-			System.err.println(e.getMessage());
-		}		
+		
+		
+		BufferedReader bReader = null;
+		try {
+			bReader = new BufferedReader(new InputStreamReader(new FileInputStream(getFileName()), "UTF-16"));
+			//read text from the file
+			String tempLine = "";
+			//the bufferedReader handles new line and EOF characters, but not whitespace characters
+			//the trim() method removes the whitespace character/s at the end of the file
+			int counter = 0;
+			while((tempLine=bReader.readLine()) != null && tempLine.trim().length() != 0){
+				//add line to the list
+				tempList.add(tempLine);
+				System.out.println(counter + ") " + tempLine);
+				counter++;
+			}	
+			bReader.close();
+			
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 }

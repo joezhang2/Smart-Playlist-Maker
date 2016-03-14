@@ -78,7 +78,6 @@ public class FileAccessListerner implements ActionListener {
 				//update stored info
 				getLabelToModify().setText(getLabelToModify().getText() + fileChooser.getSelectedFile().getName());
 				getSelectedDirectories().setDirectory(fileChooser.getSelectedFile().getAbsolutePath());
-				System.out.println(fileChooser.getSelectedFile().getAbsolutePath());
 				
 				//refresh parent panel
 				getLabelToModify().getParent().revalidate();
