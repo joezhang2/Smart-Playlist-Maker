@@ -18,12 +18,6 @@ public class PlaylistMakerController {
 		setTestFrame(new JFrame());
 		setDirectories(new SelectedDirectories());
 	}
-
-	public static void main(String[] args){
-		PlaylistMakerController test = new PlaylistMakerController();
-		test.addListeners();
-		test.init();
-	}
 	
 	public void init(){
 		testFrame.add(buttons);

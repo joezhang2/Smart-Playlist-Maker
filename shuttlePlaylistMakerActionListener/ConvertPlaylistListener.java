@@ -50,14 +50,10 @@ public class ConvertPlaylistListener implements ActionListener {
 		String path = "";
 		//get the path to the new file
 		path += newDirectory;
-		System.out.println(path);
 		//copy name of the playlist
 		path += "/" + FilenameUtils.getBaseName(oldPath);
-		System.out.println(path);
 		//add in the new extension
 		path += ".m3u";
-		System.out.println(path);
-		
 		
 		return path;
 	}

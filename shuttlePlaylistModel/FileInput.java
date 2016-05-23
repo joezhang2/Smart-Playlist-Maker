@@ -56,7 +56,6 @@ public class FileInput{
 			while((tempLine=bReader.readLine()) != null && tempLine.trim().length() != 0){
 				//add line to the list
 				tempList.add(tempLine);
-				System.out.println(counter + ") " + tempLine);
 				counter++;
 			}	
 			bReader.close();

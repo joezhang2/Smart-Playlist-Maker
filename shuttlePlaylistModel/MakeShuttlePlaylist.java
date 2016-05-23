@@ -66,7 +66,6 @@ public class MakeShuttlePlaylist{
 		while(itunesFileStorage.getFormattedInputData().hasNext()){
 			//Get the formatted data from itunesFileStorage, combine it with the values in the formatter String array 
 			templine = formatSongInShuttlePlaylist(gatherDataFromItunesPlaylist(itunesFileStorage.getFormattedInputData().getNext()),formatter);
-			System.out.print(itunesFileStorage.getFormattedInputData().getIterator() + ")1234)+++ " );
 			shuttleFileMaker.getTempList().add(templine);
 		}
 		//Write the contents of the generic list to the file 
@@ -83,17 +82,10 @@ public class MakeShuttlePlaylist{
 		String[] tempLocation;
 		
 		String[] returnData = new String[positions.length];
-
-		System.out.println("HA " + input.length);	
-		
-		for(int i = 0; i < input.length; i++){
-			System.out.println(input[i]);
-		}
-		
 		//Store first 3 values into array
 		for(int i = 0; i < positions.length; i++){
 			returnData[i] = input[positions[i]];
-			System.out.println(i + ") " + input[positions[i]]);
+			//System.out.println(i + ") " + input[positions[i]]);
 		//================================
 		}
 		//change the filepath, using / instead of : to denote a lower level
