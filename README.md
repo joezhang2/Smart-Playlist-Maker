@@ -5,3 +5,8 @@ Converts a playlist from itunes in txt format to a properly formatted m3u file f
 
 Itunes playlists are not properly formatted for the Shuttle Music Player Ap on my android phone so this program saves me the task of converting importing playlists over when new songs are added to my itunes library. 
 Ap can be found: https://play.google.com/store/apps/details?id=another.music.player
+
+img[alt="Screen Shot"] { 
+  max-width:  200px; 
+  display: block;
+}
